@@ -1,5 +1,4 @@
 import database from '../../database';
-import User from '../../models/User';
 
 async function UpdateUserService({
   num_func,
@@ -7,13 +6,13 @@ async function UpdateUserService({
   setor,
   email,
   senha
-}: User): Promise<User> {
+}){
 
   if(!num_func){
     throw new Error('código de funcionario não informado');
   }
 
-  const updateReturn = await database.oneOrNone<User>(
+  const updateReturn = await database.oneOrNone(
     `update SOS_CAD_USUARIO
       set nome = $[nome]
           ,setor = $[setor]
