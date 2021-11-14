@@ -3,7 +3,7 @@ import crypto from 'crypto';
 import multer from 'multer';
 import aws from 'aws-sdk';
 import multerS3 from 'multer-s3';
-import config from '../config';
+import config from '.';
 
 const tmpFolder = path.resolve(__dirname, '..', '..', 'tmp');
 
